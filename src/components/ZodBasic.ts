@@ -46,3 +46,35 @@ const user: User = {
 
 console.log(UserSchema.partial().parse(user));
 // console.log(UserSchema.safeParse(user).success);
+
+
+
+
+
+// 2nd Lesson
+const UserRecording = z.record(z.string(), z.number())
+
+const userRecordingData = {
+  stringssss: 1,
+  stringsss2: 2,
+};
+
+console.log(UserRecording.parse(userRecordingData));
+
+
+// 3rd Lesson
+const UserMap = z.map(z.string(), z.object({name: z.string()}));
+
+const userMapingData = new Map([
+  ["id-jhon", { name: "John" }],
+  ["id-santa", { name: "santa" }],
+]);
+
+console.log(UserMap.parse(userMapingData))
+
+// 4th Lesson
+const UserSet = z.set(z.number());
+
+const userMapingDataSet = new Set([1,1,1,1,6367,566,65,565])
+
+console.log(UserSet.parse(userMapingDataSet))
